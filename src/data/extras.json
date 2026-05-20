@@ -1,0 +1,151 @@
+{
+  "sugeribles": [
+    {
+      "name": "ABC frenos",
+      "price": 0,
+      "seg": "A"
+    },
+    {
+      "name": "ABC frenos",
+      "price": 0,
+      "seg": "B"
+    },
+    {
+      "name": "ABC frenos",
+      "price": 0,
+      "seg": "C"
+    },
+    {
+      "name": "Alineación y Balanceo",
+      "price": 29.25,
+      "seg": "A"
+    },
+    {
+      "name": "Alineación y Balanceo",
+      "price": 39,
+      "seg": "B"
+    },
+    {
+      "name": "Alineación y Balanceo",
+      "price": 39,
+      "seg": "C"
+    },
+    {
+      "name": "CAMBIO FILTRO DE AC",
+      "price": 0,
+      "seg": "ALL"
+    },
+    {
+      "name": "Escaneo/Actualización Software",
+      "price": 0,
+      "seg": "A"
+    },
+    {
+      "name": "Escaneo/Actualización Software",
+      "price": 0,
+      "seg": "B"
+    },
+    {
+      "name": "Escaneo/Actualización Software",
+      "price": 0,
+      "seg": "C"
+    },
+    {
+      "name": "Lavado Express de Cortesía",
+      "price": 0,
+      "seg": "ALL"
+    },
+    {
+      "name": "Reajuste de suspensión",
+      "price": 0,
+      "seg": "ALL"
+    },
+    {
+      "name": "Regulación de freno de estacionamiento",
+      "price": 0,
+      "seg": "ALL"
+    },
+    {
+      "name": "Revisión de Luces",
+      "price": 0,
+      "seg": "ALL"
+    },
+    {
+      "name": "Revisión niveles",
+      "price": 0,
+      "seg": "ALL"
+    },
+    {
+      "name": "Lavado de Motor",
+      "price": 20,
+      "seg": "ALL"
+    },
+    {
+      "name": "Sanitizador de sistema de AC y habitáculo",
+      "price": 35,
+      "seg": "ALL"
+    },
+    {
+      "name": "Tratamiento Cerámico (1 año)",
+      "price": 180,
+      "seg": "A"
+    },
+    {
+      "name": "Tratamiento Cerámico (1 año)",
+      "price": 220,
+      "seg": "B"
+    },
+    {
+      "name": "Tratamiento Cerámico (1 año)",
+      "price": 260,
+      "seg": "C"
+    },
+    {
+      "name": "RECARGA DEL SISTEMA DE AC",
+      "price": 58.5,
+      "seg": "ALL"
+    },
+    {
+      "name": "Limpieza tapicería interiores",
+      "price": 180,
+      "seg": "A"
+    },
+    {
+      "name": "Limpieza tapicería interiores",
+      "price": 220,
+      "seg": "B"
+    },
+    {
+      "name": "Limpieza tapicería interiores",
+      "price": 260,
+      "seg": "C"
+    }
+  ],
+  "adicionales": [
+    {
+      "name": "CHEQUEO PREVIAJE",
+      "cond": "1 POR MTO",
+      "price": 44.849999999999994
+    },
+    {
+      "name": "LAVADA DE VEHICULO",
+      "cond": "2 POR MTO",
+      "price": 13.454999999999998
+    },
+    {
+      "name": "RECUPERACIÓN DE BRILLO / ABRILLANTADO",
+      "cond": "1 POR CADA 3",
+      "price": 44.849999999999994
+    },
+    {
+      "name": "LIMPIEZA DE MOTOR",
+      "cond": "1 POR CADA 3",
+      "price": 22.424999999999997
+    },
+    {
+      "name": "BONO DE PINTURA $50",
+      "cond": "1 POR CADA 4",
+      "price": 50
+    }
+  ]
+}

@@ -1,0 +1,1067 @@
+{
+  "GROUPS": [
+    {
+      "n": "Carens KY",
+      "mo": [
+        "1.5 Gasolina"
+      ],
+      "v": {
+        "1.5 Gasolina": [
+          {
+            "tr": "IVT",
+            "code": "KY1GSL1500A42"
+          },
+          {
+            "tr": "MT",
+            "code": "KY1GSL1500M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Carnival KA4",
+      "mo": [
+        "3.5 Gasolina"
+      ],
+      "v": {
+        "3.5 Gasolina": [
+          {
+            "tr": "AT",
+            "code": "KA4KAGSL3500A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Carnival YP",
+      "mo": [
+        "3.3 Gasolina"
+      ],
+      "v": {
+        "3.3 Gasolina": [
+          {
+            "tr": "AT",
+            "code": "YPGSL3300A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Cerato BDm",
+      "mo": [
+        "1.6 Gasolina"
+      ],
+      "v": {
+        "1.6 Gasolina": [
+          {
+            "tr": "AT",
+            "code": "BDMGSL1600A42"
+          },
+          {
+            "tr": "MT",
+            "code": "BDMGSL1600M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV2 QV EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "QVEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV3 SV EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "SVEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV4 CT EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "CTEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV5 OV EV 4x2",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "OV1CEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV5 OV EV 4x4",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT AWD",
+            "code": "OV1CEV9999A44"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV6 CV EV 4x2",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "CV1EV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV6 CV EV 4x4",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT AWD",
+            "code": "CV1EV9999A44"
+          }
+        ]
+      }
+    },
+    {
+      "n": "EV9 MV EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT AWD",
+            "code": "MVEV9999A44"
+          }
+        ]
+      }
+    },
+    {
+      "n": "K2700 K2N",
+      "mo": [
+        "2.7 Diesel"
+      ],
+      "v": {
+        "2.7 Diesel": [
+          {
+            "tr": "MT",
+            "code": "K2NDSL2700M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "K3 BL7m",
+      "mo": [
+        "1.4 Gasolina",
+        "1.6 Gasolina"
+      ],
+      "v": {
+        "1.4 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "BL7GSL1400M42"
+          }
+        ],
+        "1.6 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "BL7GSL1600M42"
+          },
+          {
+            "tr": "AT",
+            "code": "BL7GSL1600A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "K3 BL7m Cross",
+      "mo": [
+        "1.4 Gasolina"
+      ],
+      "v": {
+        "1.4 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "BL7 CROSSGSL1400M42"
+          },
+          {
+            "tr": "AT",
+            "code": "BL7 CROSSGSL1400A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "K3000 K3N",
+      "mo": [
+        "3.0 Diesel"
+      ],
+      "v": {
+        "3.0 Diesel": [
+          {
+            "tr": "MT",
+            "code": "K3NDSL3000M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "K5 DL3 HEV",
+      "mo": [
+        "2.0 Gasolina"
+      ],
+      "v": {
+        "2.0 Gasolina": [
+          {
+            "tr": "DCT",
+            "code": "DL3HEV2000A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Niro DE HEV",
+      "mo": [
+        "1.6 Gasolina"
+      ],
+      "v": {
+        "1.6 Gasolina": [
+          {
+            "tr": "DCT",
+            "code": "DEHEV1600A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Niro SG2 EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "SG2EV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Niro SG2 HEV",
+      "mo": [
+        "1.6 Gasolina"
+      ],
+      "v": {
+        "1.6 Gasolina": [
+          {
+            "tr": "DCT",
+            "code": "SG2HEV1600A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Optima JF HEV",
+      "mo": [
+        "2.0 Gasolina"
+      ],
+      "v": {
+        "2.0 Gasolina": [
+          {
+            "tr": "DCT",
+            "code": "JFHEV2000A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Picanto JA",
+      "mo": [
+        "1.0 Gasolina",
+        "1.2 Gasolina"
+      ],
+      "v": {
+        "1.0 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "JAGSL1000M42"
+          }
+        ],
+        "1.2 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "JAGSL1200M42"
+          },
+          {
+            "tr": "AT",
+            "code": "JAGSL1200A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Picanto TA",
+      "mo": [
+        "1.0 Gasolina",
+        "1.2 Gasolina"
+      ],
+      "v": {
+        "1.0 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "TAGSL1000M42"
+          }
+        ],
+        "1.2 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "TAGSL1200M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "PV5 SW EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "SWEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Rio SC",
+      "mo": [
+        "1.4 Gasolina"
+      ],
+      "v": {
+        "1.4 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "SCGSL1400M42"
+          },
+          {
+            "tr": "AT",
+            "code": "SCGSL1400A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Seltos SP2c",
+      "mo": [
+        "1.5 Gasolina"
+      ],
+      "v": {
+        "1.5 Gasolina": [
+          {
+            "tr": "IVT",
+            "code": "SP2CGSL1500A42"
+          },
+          {
+            "tr": "MT",
+            "code": "SP2CGSL1500M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Seltos SP2i",
+      "mo": [
+        "1.6 Gasolina"
+      ],
+      "v": {
+        "1.6 Gasolina": [
+          {
+            "tr": "AT",
+            "code": "SP2IGSL1600A42"
+          },
+          {
+            "tr": "MT",
+            "code": "SP2IGSL1600M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Soluto AB",
+      "mo": [
+        "1.4 Gasolina"
+      ],
+      "v": {
+        "1.4 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "ABGSL1400M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Sonet QY",
+      "mo": [
+        "1.5 Gasolina"
+      ],
+      "v": {
+        "1.5 Gasolina": [
+          {
+            "tr": "IVT",
+            "code": "QYGSL1500A42"
+          },
+          {
+            "tr": "MT",
+            "code": "QYGSL1500M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Sorento MQ4",
+      "mo": [
+        "3.5 Gasolina"
+      ],
+      "v": {
+        "3.5 Gasolina": [
+          {
+            "tr": "AT",
+            "code": "MQ4KDGSL3500A44"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Sorento UM",
+      "mo": [
+        "3.3 Gasolina",
+        "3.5 Gasolina",
+        "2.4 Gasolina"
+      ],
+      "v": {
+        "3.3 Gasolina": [
+          {
+            "tr": "AT 4X2",
+            "code": "UMGSL3300A42"
+          },
+          {
+            "tr": "AT 4X4",
+            "code": "UMGSL3300A44"
+          }
+        ],
+        "3.5 Gasolina": [
+          {
+            "tr": "AT 4X2",
+            "code": "UMGSL3500A42"
+          },
+          {
+            "tr": "AT 4X4",
+            "code": "UMGSL3500A44"
+          }
+        ],
+        "2.4 Gasolina": [
+          {
+            "tr": "MT 4X2",
+            "code": "UMGSL2400M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "SOUL PS EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "PS EVEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "SOUL SK3",
+      "mo": [
+        "1.6 Gasolina"
+      ],
+      "v": {
+        "1.6 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "SK3GSL1600M42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "SOUL SK3 EV",
+      "mo": [
+        "Electrico"
+      ],
+      "v": {
+        "Electrico": [
+          {
+            "tr": "AT",
+            "code": "SK3EVEV9999A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Sportage NQ5",
+      "mo": [
+        "2.0 Gasolina"
+      ],
+      "v": {
+        "2.0 Gasolina": [
+          {
+            "tr": "MT 4X2",
+            "code": "NQ5GSL2000M42"
+          },
+          {
+            "tr": "AT 4X2",
+            "code": "NQ5GSL2000A42"
+          },
+          {
+            "tr": "AT 4X4",
+            "code": "NQ5GSL2000A44"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Sportage QL",
+      "mo": [
+        "2.0 Gasolina",
+        "2.4 Gasolina"
+      ],
+      "v": {
+        "2.0 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "QLGSL2000M42"
+          },
+          {
+            "tr": "AT",
+            "code": "QLGSL2000A42"
+          }
+        ],
+        "2.4 Gasolina": [
+          {
+            "tr": "AT",
+            "code": "QLGSL2400A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Sportage SL",
+      "mo": [
+        "2.0 Gasolina"
+      ],
+      "v": {
+        "2.0 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "SLGSL2000M42"
+          },
+          {
+            "tr": "AT",
+            "code": "SLGSL2000A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Stinger CK",
+      "mo": [
+        "2.0 Gasolina",
+        "3.3 Gasolina"
+      ],
+      "v": {
+        "2.0 Gasolina": [
+          {
+            "tr": "AT RWD",
+            "code": "CKGSL2000A42"
+          }
+        ],
+        "3.3 Gasolina": [
+          {
+            "tr": "AT AWD",
+            "code": "CKGSL3300A44"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Stonic YBCVU",
+      "mo": [
+        "1.0 Gasolina"
+      ],
+      "v": {
+        "1.0 Gasolina": [
+          {
+            "tr": "MT",
+            "code": "YBCUVHEV1000M42"
+          },
+          {
+            "tr": "DCT",
+            "code": "YBCUVHEV1000A42"
+          }
+        ]
+      }
+    },
+    {
+      "n": "Tasman TK",
+      "mo": [
+        "2.2 Diesel"
+      ],
+      "v": {
+        "2.2 Diesel": [
+          {
+            "tr": "AT 4X4",
+            "code": "TKDSL2200A44"
+          },
+          {
+            "tr": "MT 4X4",
+            "code": "TKDSL2200M44"
+          }
+        ]
+      }
+    }
+  ],
+  "CATALOG": {
+    "JAGSL1000M42": {
+      "m": "Picanto JA",
+      "mo": "1.0 Gasolina",
+      "tr": "MT",
+      "sg": "A"
+    },
+    "JAGSL1200M42": {
+      "m": "Picanto JA",
+      "mo": "1.2 Gasolina",
+      "tr": "MT",
+      "sg": "A"
+    },
+    "JAGSL1200A42": {
+      "m": "Picanto JA",
+      "mo": "1.2 Gasolina",
+      "tr": "AT",
+      "sg": "A"
+    },
+    "TAGSL1000M42": {
+      "m": "Picanto TA",
+      "mo": "1.0 Gasolina",
+      "tr": "MT",
+      "sg": "A"
+    },
+    "TAGSL1200M42": {
+      "m": "Picanto TA",
+      "mo": "1.2 Gasolina",
+      "tr": "MT",
+      "sg": "A"
+    },
+    "SCGSL1400M42": {
+      "m": "Rio SC",
+      "mo": "1.4 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "SCGSL1400A42": {
+      "m": "Rio SC",
+      "mo": "1.4 Gasolina",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "SP2IGSL1600A42": {
+      "m": "Seltos SP2i",
+      "mo": "1.6 Gasolina",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "SP2IGSL1600M42": {
+      "m": "Seltos SP2i",
+      "mo": "1.6 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "ABGSL1400M42": {
+      "m": "Soluto AB",
+      "mo": "1.4 Gasolina",
+      "tr": "MT",
+      "sg": "A"
+    },
+    "PS EVEV9999A42": {
+      "m": "SOUL PS EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "SK3GSL1600M42": {
+      "m": "SOUL SK3",
+      "mo": "1.6 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "BDMGSL1600A42": {
+      "m": "Cerato BDm",
+      "mo": "1.6 Gasolina",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "BDMGSL1600M42": {
+      "m": "Cerato BDm",
+      "mo": "1.6 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "DEHEV1600A42": {
+      "m": "Niro DE HEV",
+      "mo": "1.6 Gasolina",
+      "tr": "DCT",
+      "sg": "B"
+    },
+    "SLGSL2000M42": {
+      "m": "Sportage SL",
+      "mo": "2.0 Gasolina",
+      "tr": "MT",
+      "sg": "C"
+    },
+    "SLGSL2000A42": {
+      "m": "Sportage SL",
+      "mo": "2.0 Gasolina",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "QLGSL2000M42": {
+      "m": "Sportage QL",
+      "mo": "2.0 Gasolina",
+      "tr": "MT",
+      "sg": "C"
+    },
+    "QLGSL2000A42": {
+      "m": "Sportage QL",
+      "mo": "2.0 Gasolina",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "QLGSL2400A42": {
+      "m": "Sportage QL",
+      "mo": "2.4 Gasolina",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "UMGSL3300A42": {
+      "m": "Sorento UM",
+      "mo": "3.3 Gasolina",
+      "tr": "AT 4X2",
+      "sg": "C"
+    },
+    "UMGSL3300A44": {
+      "m": "Sorento UM",
+      "mo": "3.3 Gasolina",
+      "tr": "AT 4X4",
+      "sg": "C"
+    },
+    "UMGSL3500A42": {
+      "m": "Sorento UM",
+      "mo": "3.5 Gasolina",
+      "tr": "AT 4X2",
+      "sg": "C"
+    },
+    "UMGSL3500A44": {
+      "m": "Sorento UM",
+      "mo": "3.5 Gasolina",
+      "tr": "AT 4X4",
+      "sg": "C"
+    },
+    "UMGSL2400M42": {
+      "m": "Sorento UM",
+      "mo": "2.4 Gasolina",
+      "tr": "MT 4X2",
+      "sg": "C"
+    },
+    "CKGSL2000A42": {
+      "m": "Stinger CK",
+      "mo": "2.0 Gasolina",
+      "tr": "AT RWD",
+      "sg": "C"
+    },
+    "CKGSL3300A44": {
+      "m": "Stinger CK",
+      "mo": "3.3 Gasolina",
+      "tr": "AT AWD",
+      "sg": "C"
+    },
+    "YPGSL3300A42": {
+      "m": "Carnival YP",
+      "mo": "3.3 Gasolina",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "K3NDSL3000M42": {
+      "m": "K3000 K3N",
+      "mo": "3.0 Diesel",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "K2NDSL2700M42": {
+      "m": "K2700 K2N",
+      "mo": "2.7 Diesel",
+      "tr": "MT",
+      "sg": "C"
+    },
+    "JFHEV2000A42": {
+      "m": "Optima JF HEV",
+      "mo": "2.0 Gasolina",
+      "tr": "DCT",
+      "sg": "C"
+    },
+    "YBCUVHEV1000M42": {
+      "m": "Stonic YBCVU",
+      "mo": "1.0 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "YBCUVHEV1000A42": {
+      "m": "Stonic YBCVU",
+      "mo": "1.0 Gasolina",
+      "tr": "DCT",
+      "sg": "B"
+    },
+    "KA4KAGSL3500A42": {
+      "m": "Carnival KA4",
+      "mo": "3.5 Gasolina",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "MQ4KDGSL3500A44": {
+      "m": "Sorento MQ4",
+      "mo": "3.5 Gasolina",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "QYGSL1500A42": {
+      "m": "Sonet QY",
+      "mo": "1.5 Gasolina",
+      "tr": "IVT",
+      "sg": "B"
+    },
+    "QYGSL1500M42": {
+      "m": "Sonet QY",
+      "mo": "1.5 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "KY1GSL1500A42": {
+      "m": "Carens KY",
+      "mo": "1.5 Gasolina",
+      "tr": "IVT",
+      "sg": "C"
+    },
+    "KY1GSL1500M42": {
+      "m": "Carens KY",
+      "mo": "1.5 Gasolina",
+      "tr": "MT",
+      "sg": "C"
+    },
+    "CV1EV9999A42": {
+      "m": "EV6 CV EV 4x2",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "CV1EV9999A44": {
+      "m": "EV6 CV EV 4x4",
+      "mo": "Electrico",
+      "tr": "AT AWD",
+      "sg": "C"
+    },
+    "NQ5GSL2000M42": {
+      "m": "Sportage NQ5",
+      "mo": "2.0 Gasolina",
+      "tr": "MT 4X2",
+      "sg": "C"
+    },
+    "NQ5GSL2000A42": {
+      "m": "Sportage NQ5",
+      "mo": "2.0 Gasolina",
+      "tr": "AT 4X2",
+      "sg": "C"
+    },
+    "NQ5GSL2000A44": {
+      "m": "Sportage NQ5",
+      "mo": "2.0 Gasolina",
+      "tr": "AT 4X4",
+      "sg": "C"
+    },
+    "SG2HEV1600A42": {
+      "m": "Niro SG2 HEV",
+      "mo": "1.6 Gasolina",
+      "tr": "DCT",
+      "sg": "B"
+    },
+    "DL3HEV2000A42": {
+      "m": "K5 DL3 HEV",
+      "mo": "2.0 Gasolina",
+      "tr": "DCT",
+      "sg": "C"
+    },
+    "SK3EVEV9999A42": {
+      "m": "SOUL SK3 EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "SG2EV9999A42": {
+      "m": "Niro SG2 EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "SP2CGSL1500A42": {
+      "m": "Seltos SP2c",
+      "mo": "1.5 Gasolina",
+      "tr": "IVT",
+      "sg": "B"
+    },
+    "SP2CGSL1500M42": {
+      "m": "Seltos SP2c",
+      "mo": "1.5 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "MVEV9999A44": {
+      "m": "EV9 MV EV",
+      "mo": "Electrico",
+      "tr": "AT AWD",
+      "sg": "C"
+    },
+    "BL7GSL1400M42": {
+      "m": "K3 BL7m",
+      "mo": "1.4 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "BL7GSL1600M42": {
+      "m": "K3 BL7m",
+      "mo": "1.6 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "BL7GSL1600A42": {
+      "m": "K3 BL7m",
+      "mo": "1.6 Gasolina",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "BL7 CROSSGSL1400M42": {
+      "m": "K3 BL7m Cross",
+      "mo": "1.4 Gasolina",
+      "tr": "MT",
+      "sg": "B"
+    },
+    "BL7 CROSSGSL1400A42": {
+      "m": "K3 BL7m Cross",
+      "mo": "1.4 Gasolina",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "OV1CEV9999A42": {
+      "m": "EV5 OV EV 4x2",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "OV1CEV9999A44": {
+      "m": "EV5 OV EV 4x4",
+      "mo": "Electrico",
+      "tr": "AT AWD",
+      "sg": "C"
+    },
+    "SVEV9999A42": {
+      "m": "EV3 SV EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "TKDSL2200A44": {
+      "m": "Tasman TK",
+      "mo": "2.2 Diesel",
+      "tr": "AT 4X4",
+      "sg": "C"
+    },
+    "TKDSL2200M44": {
+      "m": "Tasman TK",
+      "mo": "2.2 Diesel",
+      "tr": "MT 4X4",
+      "sg": "C"
+    },
+    "CTEV9999A42": {
+      "m": "EV4 CT EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "B"
+    },
+    "SWEV9999A42": {
+      "m": "PV5 SW EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "C"
+    },
+    "QVEV9999A42": {
+      "m": "EV2 QV EV",
+      "mo": "Electrico",
+      "tr": "AT",
+      "sg": "A"
+    }
+  }
+}
