@@ -1,16 +1,37 @@
 import catalogData from '../data/catalog.json';
 import pricingData from '../data/pricing.json';
 import suggestionsData from '../data/suggestions.json';
+import { initPdf } from './pdf.js';
 
 const { GROUPS, CATALOG } = catalogData;
 
 let curModel = '', curMotor = '', curTrn = '', curCode = '';
 let selKMs = [];
-let selSuggestions = []; // { name, price }[]
+let selSuggestions = [];
+
+const PREPAID_ACTIVITIES = [
+  { name: 'Chequeo Previaje',                      condition: '1 por MTO',    value: 44.85, qty: n => n },
+  { name: 'Lavada de Vehículo',                    condition: '2 por MTO',    value: 13.46, qty: n => 2 * n },
+  { name: 'Recuperación de Brillo / Abrillantado', condition: '1 por cada 3', value: 44.85, qty: n => Math.floor(n / 3) },
+  { name: 'Limpieza de Motor',                     condition: '1 por cada 3', value: 22.43, qty: n => Math.floor(n / 3) },
+  { name: 'Bono de Pintura',                       condition: '1 por cada 4', value: 50.00, qty: n => Math.floor(n / 4) },
+];
+
+const AC_FILTER_PRICES = {
+  'Soluto AB': 21.17, 'Sonet QY': 17.27, 'Picanto JA': 14.18, 'Picanto TA': 14.18, 'Rio SC': 19.06,
+  'Cerato BDm': 19.06, 'K3 BL7m': 19.06, 'K3 BL7m Cross': 19.06, 'Stonic YBCVU': 17.27, 'Seltos SP2i': 19.06, 'Seltos SP2c': 19.06, 'Carens KY': 17.27,
+  'Sportage NQ5': 50.01, 'Sportage QL': 46.95, 'Niro DE HEV': 20.75, 'Niro SG2 HEV': 20.75, 'Sorento MQ4': 50.01, 'Sportage SL': 21.17, 'Carnival KA4': 17.13, 'Carnival YP': 17.13, 'Stinger CK': 72.61, 'K5 DL3 HEV': 72.61, 'Optima JF HEV': 72.61
+};
 
 export function initApp() {
   initNav();
   initSelects();
+  
+  // Initialize PDF module and pass a state getter function
+  initPdf(() => ({
+    curCode, curModel, curMotor, curTrn, selKMs, selSuggestions, pricingData
+  }));
+
   document.getElementById('btn-reset').addEventListener('click', resetAll);
   document.getElementById('btn-cat-hero').addEventListener('click', () => showSec('catalogue'));
   
@@ -317,6 +338,33 @@ function updateUI() {
     `;
   }
 
+  // Prepaid activities block (2+ MTOs)
+  if (n >= 2) {
+    const acts = PREPAID_ACTIVITIES
+      .map(a => ({ ...a, count: a.qty(n) }))
+      .filter(a => a.count > 0);
+    if (acts.length > 0) {
+      const totalBenefits = acts.reduce((sum, a) => sum + a.count * a.value, 0);
+      html += `<div class="ppdiv"></div><div class="bsec"><div class="bttl">Actividades prepagadas incluidas</div>`;
+      acts.forEach(a => {
+        html += `
+          <div class="brow">
+            <div>
+              <div class="bnam">${a.name}</div>
+              <div class="bcnd">${a.condition} · ${a.count} sesión${a.count > 1 ? 'es' : ''}</div>
+            </div>
+            <div class="bval">$${(a.count * a.value).toFixed(2)}</div>
+          </div>`;
+      });
+      html += `
+        <div class="brow" style="margin-top:4px;background:rgba(68,180,139,.1);border:1px solid rgba(68,180,139,.25)">
+          <div class="bnam" style="color:#4ade80">Valor total en beneficios</div>
+          <div class="bval">$${totalBenefits.toFixed(2)}</div>
+        </div>
+      </div>`;
+    }
+  }
+
   // Suggestions block
   if (tSug > 0) {
     html += `
@@ -398,6 +446,32 @@ function showItemsForKM(km) {
     </div>
   `;
   
+  const catInfo = CATALOG[curCode];
+  const seg = (catInfo && catInfo.sg) || 'B';
+  const sugItems = suggestionsData[seg] || [];
+  let hasIncluded = false;
+  let htmlInc = '<div class="itot" style="border:none;padding-top:10px;margin-top:10px;border-top:1px dashed var(--steel)"><span style="font-size:11px;letter-spacing:0.05em;color:var(--slate);font-weight:700">SERVICIOS INCLUIDOS:</span></div>';
+  
+  sugItems.forEach(item => {
+    let included = item.included;
+    if (item.name === 'CAMBIO FILTRO DE AC') included = false;
+    
+    if (included) {
+       hasIncluded = true;
+       htmlInc += `
+         <div class="irow" style="padding:4px 0">
+           <div class="iinf" style="margin-left:0;flex-direction:row;align-items:center;gap:6px">
+             <div style="color:#10b981;font-size:14px;font-weight:bold">✓</div>
+             <div class="iname" style="color:#059669">${item.name}</div>
+           </div>
+           <div class="irep" style="color:#059669;font-size:12px">Incluido</div>
+         </div>
+       `;
+    }
+  });
+  
+  if (hasIncluded) html += htmlInc;
+  
   list.innerHTML = html;
 }
 
@@ -419,44 +493,45 @@ function renderSuggestions() {
   list.innerHTML = '';
 
   items.forEach(item => {
+    let price = item.price;
+    let included = item.included;
+    
+    if (item.name === 'CAMBIO FILTRO DE AC') {
+       price = AC_FILTER_PRICES[curModel] || 19.06; // Fallback to B segment if missing
+       included = false;
+    }
+
+    if (included) return;
+
     const row = document.createElement('label');
     row.className = 'srow';
 
-    if (item.included) {
-      row.innerHTML = `
-        <input type="checkbox" checked disabled>
-        <span class="snam">${item.name}</span>
-        <span class="sfre">Incluido</span>
-      `;
-    } else {
-      const cb = document.createElement('input');
-      cb.type = 'checkbox';
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
 
-      // check if already selected
-      const existing = selSuggestions.find(s => s.name === item.name);
-      if (existing) cb.checked = true;
+    const existing = selSuggestions.find(s => s.name === item.name);
+    if (existing) cb.checked = true;
 
-      cb.addEventListener('change', () => {
-        if (cb.checked) {
-          selSuggestions.push({ name: item.name, price: item.price });
-        } else {
-          selSuggestions = selSuggestions.filter(s => s.name !== item.name);
-        }
-        updateUI();
-      });
+    cb.addEventListener('change', () => {
+      if (cb.checked) {
+        selSuggestions.push({ name: item.name, price: price });
+      } else {
+        selSuggestions = selSuggestions.filter(s => s.name !== item.name);
+      }
+      updateUI();
+    });
 
-      const nameSpan = document.createElement('span');
-      nameSpan.className = 'snam';
-      nameSpan.textContent = item.name;
+    const nameSpan = document.createElement('span');
+    nameSpan.className = 'snam';
+    nameSpan.textContent = item.name;
 
-      const priceSpan = document.createElement('span');
-      priceSpan.className = 'spai';
-      priceSpan.textContent = '$' + item.price.toFixed(2);
+    const priceSpan = document.createElement('span');
+    priceSpan.className = 'spai';
+    priceSpan.textContent = '$' + price.toFixed(2);
 
-      row.appendChild(cb);
-      row.appendChild(nameSpan);
-      row.appendChild(priceSpan);
-    }
+    row.appendChild(cb);
+    row.appendChild(nameSpan);
+    row.appendChild(priceSpan);
 
     list.appendChild(row);
   });

@@ -171,6 +171,68 @@
   </div>
 </footer>
 
+<!-- Modal Generación PDF -->
+<div id="pdf-modal" class="modal hidden">
+  <div class="m-overlay"></div>
+  <div class="m-box">
+    <div class="m-hdr">
+      <div>
+        <div class="m-icon">📄</div>
+        <div class="m-titles">
+          <h2>Cotización oficial</h2>
+          <p>Ingresa los datos para generar el documento PDF</p>
+        </div>
+      </div>
+      <button class="m-close" id="pdf-close">×</button>
+    </div>
+    <div class="m-bdy">
+      <div class="m-row">
+        <div class="m-col">
+          <label>Nombre del cliente</label>
+          <input type="text" id="pdf-cliente" class="m-inp" placeholder="Ej. Juan Pérez">
+        </div>
+        <div class="m-col">
+          <label>Cédula o RUC</label>
+          <input type="text" id="pdf-cedula" class="m-inp" placeholder="Ej. 17xxxxxxxx">
+        </div>
+      </div>
+      <div class="m-row">
+        <div class="m-col">
+          <label>Teléfono</label>
+          <input type="tel" id="pdf-telefono" class="m-inp" placeholder="Ej. 09xxxxxxxx">
+        </div>
+        <div class="m-col">
+          <label>Agencia KIA</label>
+          <div class="m-sel-wrap">
+            <select id="pdf-agencia" class="m-inp">
+              <option value="SURMOTOR">Surmotor</option>
+              <option value="SHYRIS">Shyris</option>
+              <option value="GRANDA_CENTENO">Granda Centeno</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="m-row">
+        <div class="m-col" style="flex:1">
+          <label>Nombre del asesor</label>
+          <input type="text" id="pdf-asesor" class="m-inp" placeholder="Ej. Carlos Mendoza">
+        </div>
+      </div>
+      <div class="m-terms">
+        <label class="chk-container">
+          <input type="checkbox" id="pdf-terms">
+          <div class="chk-box"></div>
+          <span>Autorizo el tratamiento de mis datos personales de acuerdo a la Ley Orgánica de Protección de Datos Personales vigente en Ecuador, exclusivamente para fines informativos y de cotización.</span>
+        </label>
+      </div>
+    </div>
+    <div class="m-ftr">
+      <button class="m-btn-out" id="pdf-cancel">Cancelar</button>
+      <button class="m-btn-pri" id="pdf-generate" disabled>Descargar Cotización</button>
+    </div>
+  </div>
+</div>
+
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>

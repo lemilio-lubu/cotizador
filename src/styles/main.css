@@ -56,6 +56,41 @@ main{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:36px 32p
 .card:last-child{margin-bottom:0}
 .chdr{padding:16px 20px 12px;border-bottom:1px solid var(--steel);display:flex;align-items:center;justify-content:space-between}
 .cttl{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--slate);display:flex;align-items:center;gap:8px}
+/* Modal PDF Premium Design */
+.modal{position:fixed;inset:0;z-index:999;display:flex;align-items:center;justify-content:center;opacity:1;transition:opacity .25s ease;padding:20px}
+.modal.hidden{opacity:0;pointer-events:none}
+.m-overlay{position:absolute;inset:0;background:rgba(10,12,16,.75);backdrop-filter:blur(8px)}
+.m-box{position:relative;background:var(--white);width:100%;max-width:520px;border-radius:16px;box-shadow:0 32px 64px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.1) inset;display:flex;flex-direction:column;overflow:hidden;transform:translateY(0) scale(1);transition:transform .3s cubic-bezier(0.34, 1.56, 0.64, 1)}
+.modal.hidden .m-box{transform:translateY(20px) scale(0.95)}
+.m-hdr{padding:24px 30px;border-bottom:1px solid var(--fog);display:flex;align-items:flex-start;justify-content:space-between;background:linear-gradient(180deg, #fafafa 0%, #ffffff 100%)}
+.m-hdr > div{display:flex;align-items:center;gap:16px}
+.m-icon{width:48px;height:48px;background:rgba(236,101,43,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;color:var(--org)}
+.m-titles h2{margin:0 0 4px 0;font-size:18px;font-weight:700;color:var(--ink);letter-spacing:-0.02em}
+.m-titles p{margin:0;font-size:13px;color:var(--slate)}
+.m-close{background:none;border:none;font-size:28px;line-height:1;color:var(--slate);cursor:pointer;padding:0;transition:color .15s, transform .15s}
+.m-close:hover{color:var(--ink);transform:scale(1.1)}
+.m-bdy{padding:30px;display:flex;flex-direction:column;gap:20px;background:#fff}
+.m-row{display:flex;gap:20px}
+.m-col{flex:1;display:flex;flex-direction:column;gap:8px}
+.m-col label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+.m-inp{width:100%;padding:12px 14px;border:1px solid #d1d5db;border-radius:8px;font-family:var(--f);font-size:14px;color:var(--ink);background:#f9fafb;transition:all .2s;box-shadow:inset 0 1px 2px rgba(0,0,0,.02)}
+.m-inp:focus{outline:none;border-color:var(--org);background:#fff;box-shadow:0 0 0 4px rgba(236,101,43,.1)}
+.m-sel-wrap{position:relative}
+.m-sel-wrap::after{content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--slate);font-size:14px}
+select.m-inp{appearance:none;-webkit-appearance:none;padding-right:36px}
+.m-terms{margin-top:4px;padding:16px;background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0}
+.chk-container{display:flex;align-items:flex-start;gap:12px;cursor:pointer;position:relative}
+.chk-container input{position:absolute;opacity:0;cursor:pointer;height:0;width:0}
+.chk-box{width:20px;height:20px;border:2px solid #cbd5e1;border-radius:6px;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.chk-container input:checked ~ .chk-box{background:var(--org);border-color:var(--org)}
+.chk-container input:checked ~ .chk-box::after{content:'';width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-2px}
+.chk-container span{font-size:12px;line-height:1.5;color:#475569}
+.m-ftr{padding:20px 30px;background:#f8fafc;border-top:1px solid #e2e8f0;display:flex;justify-content:flex-end;gap:16px}
+.m-btn-out{padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;background:none;border:1px solid #cbd5e1;color:#475569;cursor:pointer;transition:all .2s}
+.m-btn-out:hover{background:#f1f5f9;color:var(--ink)}
+.m-btn-pri{padding:12px 24px;border-radius:8px;font-weight:600;font-size:14px;background:var(--org);border:none;color:#fff;cursor:pointer;transition:all .2s;box-shadow:0 4px 12px rgba(236,101,43,.2)}
+.m-btn-pri:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 16px rgba(236,101,43,.3)}
+.m-btn-pri:disabled{opacity:0.5;cursor:not-allowed;box-shadow:none;background:#94a3b8}
 .sdot{width:22px;height:22px;border-radius:50%;background:var(--org);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .sdot.done{background:var(--moss)}
 
