@@ -713,13 +713,13 @@
       "m": "Rio SC",
       "mo": "1.4 Gasolina",
       "tr": "MT",
-      "sg": "B"
+      "sg": "A"
     },
     "SCGSL1400A42": {
       "m": "Rio SC",
       "mo": "1.4 Gasolina",
       "tr": "AT",
-      "sg": "B"
+      "sg": "A"
     },
     "SP2IGSL1600A42": {
       "m": "Seltos SP2i",
@@ -767,7 +767,7 @@
       "m": "Niro DE HEV",
       "mo": "1.6 Gasolina",
       "tr": "DCT",
-      "sg": "B"
+      "sg": "C"
     },
     "SLGSL2000M42": {
       "m": "Sportage SL",
@@ -851,13 +851,13 @@
       "m": "K3000 K3N",
       "mo": "3.0 Diesel",
       "tr": "MT",
-      "sg": "B"
+      "sg": "C"
     },
     "K2NDSL2700M42": {
       "m": "K2700 K2N",
       "mo": "2.7 Diesel",
       "tr": "MT",
-      "sg": "C"
+      "sg": "B"
     },
     "JFHEV2000A42": {
       "m": "Optima JF HEV",
@@ -893,25 +893,25 @@
       "m": "Sonet QY",
       "mo": "1.5 Gasolina",
       "tr": "IVT",
-      "sg": "B"
+      "sg": "A"
     },
     "QYGSL1500M42": {
       "m": "Sonet QY",
       "mo": "1.5 Gasolina",
       "tr": "MT",
-      "sg": "B"
+      "sg": "A"
     },
     "KY1GSL1500A42": {
       "m": "Carens KY",
       "mo": "1.5 Gasolina",
       "tr": "IVT",
-      "sg": "C"
+      "sg": "B"
     },
     "KY1GSL1500M42": {
       "m": "Carens KY",
       "mo": "1.5 Gasolina",
       "tr": "MT",
-      "sg": "C"
+      "sg": "B"
     },
     "CV1EV9999A42": {
       "m": "EV6 CV EV 4x2",
@@ -947,7 +947,7 @@
       "m": "Niro SG2 HEV",
       "mo": "1.6 Gasolina",
       "tr": "DCT",
-      "sg": "B"
+      "sg": "C"
     },
     "DL3HEV2000A42": {
       "m": "K5 DL3 HEV",
@@ -1019,13 +1019,13 @@
       "m": "EV5 OV EV 4x2",
       "mo": "Electrico",
       "tr": "AT",
-      "sg": "C"
+      "sg": "B"
     },
     "OV1CEV9999A44": {
       "m": "EV5 OV EV 4x4",
       "mo": "Electrico",
       "tr": "AT AWD",
-      "sg": "C"
+      "sg": "B"
     },
     "SVEV9999A42": {
       "m": "EV3 SV EV",

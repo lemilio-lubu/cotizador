@@ -1,0 +1,218 @@
+{
+  "A": [
+    {
+      "name": "ABC frenos",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Alineación y Balanceo",
+      "price": 29.25,
+      "included": false
+    },
+    {
+      "name": "CAMBIO FILTRO DE AC",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Escaneo/Actualización Software",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Lavado Express de Cortesía",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Reajuste de suspensión",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Regulación de freno de estacionamiento",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Revisión de Luces",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Revisión niveles",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Lavado de Motor",
+      "price": 20,
+      "included": false
+    },
+    {
+      "name": "Sanitizador de sistema de AC y habitáculo",
+      "price": 35,
+      "included": false
+    },
+    {
+      "name": "Tratamiento Cerámico (1 año)",
+      "price": 180,
+      "included": false
+    },
+    {
+      "name": "RECARGA DEL SISTEMA DE AC",
+      "price": 58.5,
+      "included": false
+    },
+    {
+      "name": "Limpieza tapicería interiores",
+      "price": 180,
+      "included": false
+    }
+  ],
+  "B": [
+    {
+      "name": "ABC frenos",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Alineación y Balanceo",
+      "price": 39,
+      "included": false
+    },
+    {
+      "name": "CAMBIO FILTRO DE AC",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Escaneo/Actualización Software",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Lavado Express de Cortesía",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Reajuste de suspensión",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Regulación de freno de estacionamiento",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Revisión de Luces",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Revisión niveles",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Lavado de Motor",
+      "price": 20,
+      "included": false
+    },
+    {
+      "name": "Sanitizador de sistema de AC y habitáculo",
+      "price": 35,
+      "included": false
+    },
+    {
+      "name": "Tratamiento Cerámico (1 año)",
+      "price": 220,
+      "included": false
+    },
+    {
+      "name": "RECARGA DEL SISTEMA DE AC",
+      "price": 58.5,
+      "included": false
+    },
+    {
+      "name": "Limpieza tapicería interiores",
+      "price": 220,
+      "included": false
+    }
+  ],
+  "C": [
+    {
+      "name": "ABC frenos",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Alineación y Balanceo",
+      "price": 39,
+      "included": false
+    },
+    {
+      "name": "CAMBIO FILTRO DE AC",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Escaneo/Actualización Software",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Lavado Express de Cortesía",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Reajuste de suspensión",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Regulación de freno de estacionamiento",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Revisión de Luces",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Revisión niveles",
+      "price": 0,
+      "included": true
+    },
+    {
+      "name": "Lavado de Motor",
+      "price": 20,
+      "included": false
+    },
+    {
+      "name": "Sanitizador de sistema de AC y habitáculo",
+      "price": 35,
+      "included": false
+    },
+    {
+      "name": "Tratamiento Cerámico (1 año)",
+      "price": 260,
+      "included": false
+    },
+    {
+      "name": "RECARGA DEL SISTEMA DE AC",
+      "price": 58.5,
+      "included": false
+    },
+    {
+      "name": "Limpieza tapicería interiores",
+      "price": 260,
+      "included": false
+    }
+  ]
+}

@@ -1,10 +1,12 @@
 import catalogData from '../data/catalog.json';
 import pricingData from '../data/pricing.json';
+import suggestionsData from '../data/suggestions.json';
 
 const { GROUPS, CATALOG } = catalogData;
 
 let curModel = '', curMotor = '', curTrn = '', curCode = '';
 let selKMs = [];
+let selSuggestions = []; // { name, price }[]
 
 export function initApp() {
   initNav();
@@ -38,18 +40,86 @@ function showSec(id, btn = null) {
 }
 
 function initSelects() {
-  const dlMod = document.getElementById('dl-models');
-  GROUPS.forEach(g => {
-    const opt = document.createElement('option');
-    opt.value = g.n;
-    dlMod.appendChild(opt);
-  });
-  
   document.getElementById('met-var').textContent = Object.keys(CATALOG).length;
-
-  document.getElementById('inp-mod').addEventListener('input', onMod);
+  initAutocomplete();
   document.getElementById('sel-mtr').addEventListener('change', onMtr);
   document.getElementById('sel-trn').addEventListener('change', onTrn);
+}
+
+function initAutocomplete() {
+  const inp = document.getElementById('inp-mod');
+  const list = document.getElementById('ac-list');
+  const modelNames = GROUPS.map(g => g.n);
+  let focusIdx = -1;
+
+  function highlight(text, query) {
+    if (!query) return text;
+    const re = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return text.replace(re, '<mark>$1</mark>');
+  }
+
+  function showList(query) {
+    const q = query.trim().toLowerCase();
+    const matches = q
+      ? modelNames.filter(n => n.toLowerCase().includes(q))
+      : modelNames;
+
+    list.innerHTML = '';
+    focusIdx = -1;
+
+    if (matches.length === 0) {
+      list.innerHTML = '<li class="ac-empty">Sin resultados</li>';
+    } else {
+      matches.forEach(name => {
+        const li = document.createElement('li');
+        li.className = 'ac-item';
+        li.innerHTML = highlight(name, q);
+        li.addEventListener('mousedown', (e) => {
+          e.preventDefault(); // prevent blur before click
+          selectModel(name);
+        });
+        list.appendChild(li);
+      });
+    }
+
+    list.classList.remove('hidden');
+  }
+
+  function hideList() {
+    list.classList.add('hidden');
+    focusIdx = -1;
+  }
+
+  function selectModel(name) {
+    inp.value = name;
+    hideList();
+    onMod({ target: { value: name } });
+  }
+
+  function moveFocus(dir) {
+    const items = list.querySelectorAll('.ac-item');
+    if (!items.length) return;
+    items[focusIdx]?.classList.remove('ac-focus');
+    focusIdx = Math.max(0, Math.min(items.length - 1, focusIdx + dir));
+    items[focusIdx].classList.add('ac-focus');
+    items[focusIdx].scrollIntoView({ block: 'nearest' });
+  }
+
+  inp.addEventListener('input', () => showList(inp.value));
+  inp.addEventListener('focus', () => showList(inp.value));
+  inp.addEventListener('blur', () => setTimeout(hideList, 150));
+
+  inp.addEventListener('keydown', (e) => {
+    if (list.classList.contains('hidden')) return;
+    if (e.key === 'ArrowDown') { e.preventDefault(); moveFocus(1); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); moveFocus(-1); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      const focused = list.querySelector('.ac-focus');
+      if (focused) selectModel(focused.textContent);
+    }
+    else if (e.key === 'Escape') hideList();
+  });
 }
 
 function onMod(e) {
@@ -113,11 +183,14 @@ function onMtr(e) {
 function onTrn(e) {
   curTrn = e.target.value;
   selKMs = [];
+  selSuggestions = [];
   
   if (!curTrn) {
     curCode = '';
     document.getElementById('codbox').classList.add('hidden');
     document.getElementById('seg-badge').textContent = '— Segmento';
+    document.getElementById('seg-badge').className = 'badge bn';
+    hideSugCard();
     updateUI();
     return;
   }
@@ -131,12 +204,14 @@ function onTrn(e) {
       document.getElementById('codbox').classList.remove('hidden');
       const catInfo = CATALOG[curCode];
       if (catInfo) {
-        document.getElementById('seg-badge').textContent = 'Segmento ' + catInfo.sg;
+        const sg = catInfo.sg || 'B';
+        document.getElementById('seg-badge').textContent = 'Segmento ' + sg;
         document.getElementById('seg-badge').className = 'badge ba';
       }
     }
   }
   renderKMs();
+  renderSuggestions();
   updateUI();
 }
 
@@ -204,8 +279,10 @@ function updateUI() {
       tConIVA += kd.c;
     }
   });
-  
-  const prepConIVA = tConIVA * (1 - disc);
+
+  // Add selected suggestions (no IVA applied — they're already final price)
+  const tSug = selSuggestions.reduce((acc, s) => acc + s.price, 0);
+  const grandTotal = tConIVA * (1 - disc) + tSug;
   
   let html = `
     <div class="pprow"><span class="pplbl">Repuestos (PVP)</span><span class="ppval">$${tRep.toFixed(2)}</span></div>
@@ -219,23 +296,36 @@ function updateUI() {
   if (disc > 0) {
     html += `
       <div class="pptrow">
-        <span class="pptlbl">Total Regular</span>
+        <span class="pptlbl">Mantenimientos</span>
         <span class="pptval str" style="font-size:16px">$${tConIVA.toFixed(2)}</span>
       </div>
       <div class="pptrow" style="margin-top:5px">
         <span class="pptlbl">Total Prepagado</span>
-        <span class="pptval">$${prepConIVA.toFixed(2)}</span>
+        <span class="pptval">$${(tConIVA * (1-disc)).toFixed(2)}</span>
       </div>
       <div class="savbox">
         <span class="savlbl">Ahorro por ${n} MTOs</span>
-        <span class="savval">$${(tConIVA - prepConIVA).toFixed(2)}</span>
+        <span class="savval">$${(tConIVA - tConIVA*(1-disc)).toFixed(2)}</span>
       </div>
     `;
   } else {
     html += `
       <div class="pptrow">
-        <span class="pptlbl">Total</span>
+        <span class="pptlbl">Total mantenimientos</span>
         <span class="pptval" style="color:#fff">$${tConIVA.toFixed(2)}</span>
+      </div>
+    `;
+  }
+
+  // Suggestions block
+  if (tSug > 0) {
+    html += `
+      <div class="ppdiv"></div>
+      <div class="pprow"><span class="pplbl">Servicios adicionales</span><span class="ppval">$${tSug.toFixed(2)}</span></div>
+      <div class="ppdiv"></div>
+      <div class="pptrow">
+        <span class="pptlbl" style="color:#4ade80;font-size:15px">TOTAL FINAL</span>
+        <span class="pptval">$${grandTotal.toFixed(2)}</span>
       </div>
     `;
   }
@@ -311,12 +401,78 @@ function showItemsForKM(km) {
   list.innerHTML = html;
 }
 
+function renderSuggestions() {
+  const card = document.getElementById('sug-card');
+  const list = document.getElementById('sug-list');
+  const badge = document.getElementById('sug-badge');
+
+  if (!curCode) { hideSugCard(); return; }
+
+  const catInfo = CATALOG[curCode];
+  const seg = (catInfo && catInfo.sg) || 'B';
+  const items = suggestionsData[seg] || [];
+
+  badge.textContent = 'Seg ' + seg;
+  badge.className = seg === 'A' ? 'badge ba' : seg === 'B' ? 'badge bb' : 'badge bc';
+
+  card.classList.remove('hidden');
+  list.innerHTML = '';
+
+  items.forEach(item => {
+    const row = document.createElement('label');
+    row.className = 'srow';
+
+    if (item.included) {
+      row.innerHTML = `
+        <input type="checkbox" checked disabled>
+        <span class="snam">${item.name}</span>
+        <span class="sfre">Incluido</span>
+      `;
+    } else {
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+
+      // check if already selected
+      const existing = selSuggestions.find(s => s.name === item.name);
+      if (existing) cb.checked = true;
+
+      cb.addEventListener('change', () => {
+        if (cb.checked) {
+          selSuggestions.push({ name: item.name, price: item.price });
+        } else {
+          selSuggestions = selSuggestions.filter(s => s.name !== item.name);
+        }
+        updateUI();
+      });
+
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'snam';
+      nameSpan.textContent = item.name;
+
+      const priceSpan = document.createElement('span');
+      priceSpan.className = 'spai';
+      priceSpan.textContent = '$' + item.price.toFixed(2);
+
+      row.appendChild(cb);
+      row.appendChild(nameSpan);
+      row.appendChild(priceSpan);
+    }
+
+    list.appendChild(row);
+  });
+}
+
+function hideSugCard() {
+  document.getElementById('sug-card').classList.add('hidden');
+  selSuggestions = [];
+}
 function resetAll() {
-  curModel = ''; curMotor = ''; curTrn = ''; curCode = ''; selKMs = [];
+  curModel = ''; curMotor = ''; curTrn = ''; curCode = ''; selKMs = []; selSuggestions = [];
   document.getElementById('inp-mod').value = '';
   onMod({target: {value: ''}});
   document.getElementById('km-grid').innerHTML = '';
   document.getElementById('items-card').classList.add('hidden');
+  hideSugCard();
   updateUI();
 }
 
