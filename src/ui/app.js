@@ -8,6 +8,7 @@ const { GROUPS, CATALOG } = catalogData;
 let curModel = '', curMotor = '', curTrn = '', curCode = '';
 let selKMs = [];
 let selSuggestions = [];
+let curMonths = 3;
 
 const PREPAID_ACTIVITIES = [
   { name: 'Chequeo Previaje',                      condition: '1 por MTO',    value: 44.85, qty: n => n },
@@ -34,6 +35,16 @@ export function initApp() {
 
   document.getElementById('btn-reset').addEventListener('click', resetAll);
   document.getElementById('btn-cat-hero').addEventListener('click', () => showSec('catalogue'));
+
+  // Installment (cuotas) buttons
+  document.querySelectorAll('.cubtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cubtn').forEach(b => b.classList.remove('ca'));
+      btn.classList.add('ca');
+      curMonths = Number(btn.dataset.m);
+      updateCuotas();
+    });
+  });
   
   // Filter logic for catalogue
   document.querySelectorAll('.cfbtn').forEach(b => {
@@ -379,9 +390,39 @@ function updateUI() {
   }
   
   ppBody.innerHTML = html;
-  
+
+  // Sync installment display whenever totals change
+  updateCuotas(grandTotal);
+
   // Also render items
   renderItems();
+}
+
+function updateCuotas(grandTotal) {
+  const amtEl = document.getElementById('cu-amt');
+  const dscEl = document.getElementById('cu-desc');
+  if (!amtEl || !dscEl) return;
+
+  // grandTotal may be passed directly or we derive it from current state
+  let total = grandTotal;
+  if (total === undefined) {
+    if (!curCode || selKMs.length === 0) {
+      amtEl.textContent = '—';
+      dscEl.textContent = `${curMonths} cuotas mensuales`;
+      return;
+    }
+    const d = pricingData[curCode];
+    const n = selKMs.length;
+    const disc = n >= 2 ? 0.05 : 0;
+    let tConIVA = 0;
+    selKMs.forEach(km => { if (d.k[km]) tConIVA += d.k[km].c; });
+    const tSug = selSuggestions.reduce((acc, s) => acc + s.price, 0);
+    total = tConIVA * (1 - disc) + tSug;
+  }
+
+  const monthly = total / curMonths;
+  amtEl.textContent = `$${monthly.toFixed(2)} / mes`;
+  dscEl.textContent = `${curMonths} cuotas mensuales`;
 }
 
 function renderItems() {
@@ -548,6 +589,9 @@ function resetAll() {
   document.getElementById('km-grid').innerHTML = '';
   document.getElementById('items-card').classList.add('hidden');
   hideSugCard();
+  // Reset cuotas display
+  const amtEl = document.getElementById('cu-amt');
+  if (amtEl) amtEl.textContent = '—';
   updateUI();
 }
 
