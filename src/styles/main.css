@@ -266,3 +266,110 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
 .ftli a{color:rgba(255,255,255,.35);text-decoration:none}
 .ftli a:hover{color:rgba(255,255,255,.65)}
 .hidden{display:none!important}
+
+/* ─── RESPONSIVE ───────────────────────────────────────────── */
+
+/* Tablet: collapse sidebar under main content */
+@media (max-width: 1024px) {
+  main{grid-template-columns:1fr;gap:16px;padding:24px 20px}
+  .sidebar{position:static;top:auto}
+  .clayout{grid-template-columns:1fr;gap:16px;padding:24px 20px}
+  .csb{position:static}
+  .cfbtns{flex-direction:row;flex-wrap:wrap;gap:6px}
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  /* Nav */
+  .nv{padding:0 16px;height:52px}
+  .nlinks{display:none}
+  .ncta{font-size:12px;padding:6px 12px}
+  .nsub{display:none}
+
+  /* Hero */
+  .hero{padding:32px 16px 24px}
+  .hero h1{font-size:32px}
+  .hsub{font-size:14px;margin-bottom:20px}
+  .hacts{flex-direction:column;align-items:flex-start;gap:8px}
+  .bpri,.bout{width:100%;justify-content:center}
+
+  /* Feature strip */
+  .fstrip{padding:0 16px}
+  .fsin{flex-direction:column}
+  .fi{border-right:none;border-bottom:1px solid var(--steel);padding:12px 8px}
+  .fi:last-child{border-bottom:none}
+
+  /* Main */
+  main{padding:16px 12px;gap:12px}
+
+  /* Cards */
+  .card{border-radius:10px}
+  .chdr{padding:12px 14px 10px}
+
+  /* Vehicle selector */
+  .cbody{padding:12px 14px}
+  .sel3{grid-template-columns:1fr;gap:8px}
+
+  /* KM grid */
+  .kmgrid{grid-template-columns:repeat(4,1fr);gap:4px}
+  .kmsec{padding:12px 14px}
+  .note{font-size:10px}
+
+  /* Items */
+  .isec{padding:0 14px 12px}
+  .km-tabs{padding:10px 14px 8px}
+
+  /* Suggestions */
+  .ssec{padding:12px 14px}
+  .snam{font-size:12px}
+
+  /* Sidebar / Pricing panel */
+  .pp{border-radius:10px}
+  .ppbody{padding:12px 14px}
+  .ppft{padding:10px 14px}
+
+  /* Comparison table: tighten columns */
+  .cmp-col-lbl{min-width:58px;font-size:8px}
+  .cmp-val-reg{min-width:58px;font-size:10px}
+  .cmp-val-pre{min-width:58px;font-size:12px}
+  .cmp-lbl{font-size:10px}
+
+  /* Savings badge */
+  .sav-amt{font-size:22px}
+  .sav-ico{font-size:18px}
+
+  /* Cuotas */
+  .cuwrap{margin-top:8px}
+  .cubtns{gap:3px}
+  .cubtn{padding:3px 8px;font-size:11px}
+  .cuamt{font-size:17px}
+
+  /* Catalogue */
+  .clayout{padding:16px 12px}
+
+  /* Labour table */
+  .molayout{padding:16px 12px}
+  .motto{font-size:18px}
+  .motbl thead th{font-size:9px;padding:7px 8px}
+  .motbl tbody td{font-size:12px;padding:6px 8px}
+
+  /* Footer */
+  footer{padding:16px}
+  .ftin{flex-direction:column;gap:8px;text-align:center}
+  .ftli{justify-content:center}
+
+  /* PDF modal */
+  .m-box{margin:12px;border-radius:12px}
+  .m-bdy{padding:20px 16px;gap:14px}
+  .m-row{flex-direction:column;gap:14px}
+  .m-hdr{padding:18px 20px}
+  .m-ftr{padding:14px 20px}
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .hero h1{font-size:26px}
+  .kmgrid{grid-template-columns:repeat(3,1fr)}
+  .cubtns{gap:2px}
+  .cubtn{padding:3px 6px}
+}
