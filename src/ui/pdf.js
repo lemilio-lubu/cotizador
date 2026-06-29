@@ -223,13 +223,20 @@ function generatePDF(clientData) {
   }
 
   // -- SUGGESTIONS --
-  const tSug = state.selSuggestions.reduce((acc, s) => acc + s.price, 0);
+  const tSug = state.selSuggestions.reduce((acc, s) => {
+    const price = s.isOneTime ? s.unitPrice : (s.unitPrice * n);
+    return acc + price;
+  }, 0);
   if (state.selSuggestions.length > 0) {
     doc.setFontSize(12);
     doc.setFont("helvetica", "bold");
     doc.text("Servicios Adicionales Seleccionados", 14, currentY);
     
-    const sugBody = state.selSuggestions.map(s => [s.name, `$${s.price.toFixed(2)}`]);
+    const sugBody = state.selSuggestions.map(s => {
+      const price = s.isOneTime ? s.unitPrice : (s.unitPrice * n);
+      const suffix = s.isOneTime ? "" : ` (x${n} MTOs)`;
+      return [s.name + suffix, `$${price.toFixed(2)}`];
+    });
     autoTable(doc, {
       startY: currentY + 4,
       head: [['Servicio', 'Precio']],
